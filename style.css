@@ -1,0 +1,373 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto&display=swap");
+:root {
+  --color-black: #222429;
+  --color-blue: #3481EF;
+  --color-orange: #FF4E00;
+  --color-yellow: #F7DF1E;
+  --color-gray: #979797;
+  --color-white: #F5F6F6;
+  --border-radius: ;
+  --card-border-radius: ;
+  --btn-padding: ;
+  --search-padding: ;
+  --card-padding: ;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--color-black);
+  background: var(--color-white);
+  overflow-x: hidden;
+}
+
+/*-------------- GENERAL STYLES ---------------*/
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/*------------------ NAVBAR ------------------*/
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+}
+nav .left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+nav .left .logo {
+  background: var(--color-yellow);
+  padding: 1.3rem;
+  border-radius: 0.4rem;
+  position: relative;
+}
+nav .left .logo span {
+  position: absolute;
+  bottom: 0;
+  right: 0.3rem;
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--color-black);
+}
+nav .left span {
+  color: var(--color-gray);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+nav .left span.active {
+  color: var(--color-black);
+  font-weight: 700;
+}
+nav .right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+nav .right .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--color-gray);
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--color-gray);
+  font-weight: 500;
+  cursor: pointer;
+}
+nav .right .btn i {
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+nav .right .socials {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  cursor: pointer;
+}
+nav .right .socials i {
+  padding: 0.1rem;
+  background: white;
+  border-radius: 50%;
+}
+nav .right .socials i:nth-of-type(1) {
+  color: var(--color-orange);
+  font-size: 1.5rem;
+  box-shadow: -3px 13px 60px var(--color-gray);
+}
+nav .right .socials i:nth-of-type(2) {
+  color: var(--color-blue);
+  font-size: 1.5rem;
+  box-shadow: -3px 13px 60px var(--color-gray);
+}
+
+/*---------------- MAIN --------------------*/
+main {
+  /*-------------- CARD --------------*/
+}
+main .header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+main .header .title {
+  color: var(--color-black);
+  font-size: 2.5rem;
+}
+main .header .desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-gray);
+  font-size: 0.8rem;
+}
+main .header .searchbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 0 0.7rem;
+  width: 32rem;
+  height: 3.5rem;
+  border-radius: 0.5rem;
+}
+main .header .searchbar input {
+  width: 19rem;
+}
+main .header .searchbar input::-moz-placeholder {
+  color: var(--color-gray);
+}
+main .header .searchbar input::placeholder {
+  color: var(--color-gray);
+}
+main .header .searchbar .btn {
+  border: 1px solid var(--color-black);
+  height: 2.7rem;
+  border-radius: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.3rem;
+}
+main .header .searchbar i {
+  font-size: 1.4rem;
+}
+main .card-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+  height: 20vh;
+}
+main .card-heading .left {
+  display: flex;
+  gap: 1.4rem;
+}
+main .card-heading .left span {
+  cursor: pointer;
+}
+main .card-heading .left .latest {
+  position: relative;
+}
+main .card-heading .left .latest .status {
+  position: absolute;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: orangered;
+  top: 0;
+  right: -0.6rem;
+}
+main .card-heading .left :nth-child(4) {
+  color: var(--color-orange);
+}
+main .card-heading .left :nth-child(5) {
+  color: var(--color-blue);
+}
+main .card-heading .right {
+  font-size: 1.2rem;
+}
+main .card-heading .right i {
+  cursor: pointer;
+}
+main .cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+main .cards > :nth-child(2) {
+  box-shadow: 0 20px 100px lightgray;
+}
+main .cards .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  width: 17rem;
+  border-radius: 1.5rem;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+}
+main .cards .card .photo {
+  position: relative;
+  width: 15rem;
+  height: 12rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  background: lightblue;
+  overflow: hidden;
+}
+main .cards .card .photo img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .cards .card .photo .cat {
+  position: absolute;
+  color: var(--color-white);
+  font-size: 0.8rem;
+  top: 0.3rem;
+  right: 1rem;
+  font-weight: bold;
+}
+main .cards .card .name {
+  color: var(--color-gray);
+  font-size: 1.3rem;
+  font-weight: lighter;
+}
+main .cards .card .name::first-letter {
+  color: var(--color-black);
+  font-size: 2.5rem;
+}
+main .cards .card .download span {
+  border-bottom: 2px solid var(--color-black);
+  width: 100%;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+main .footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 3rem 0;
+}
+main .footer .left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+main .footer .left .discover {
+  display: flex;
+  flex-direction: column;
+}
+main .footer .left .collections {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+main .footer .left .collections .collection {
+  position: absolute;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 0.4rem;
+  border: 3px solid white;
+  overflow: hidden;
+}
+main .footer .left .collections .collection img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .footer .left .collections > :nth-child(1) {
+  left: 0;
+}
+main .footer .left .collections > :nth-child(2) {
+  left: 1.5rem;
+}
+main .footer .left .collections > :nth-child(3) {
+  left: 3rem;
+}
+main .footer .left .collections > :nth-child(4) {
+  left: 4.5rem;
+}
+main .footer .btn {
+  padding: 1rem 3rem;
+  background: white;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+main .footer .right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-weight: bold;
+  gap: 1rem;
+}
+main .footer .right .nav-btns {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+main .footer .right .nav-btns i {
+  font-size: 1.4rem;
+}
+main .footer .right .nav-btns .previous {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: lightgrey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.2rem;
+  color: var(--color-gray);
+  cursor: pointer;
+}
+main .footer .right .nav-btns .current {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: white;
+  border: 1px solid var(--color-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
+main .footer .right .nav-btns .next {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: lightgrey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.2rem;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
