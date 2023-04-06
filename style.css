@@ -65,14 +65,38 @@ nav .left .logo span {
   font-size: 1rem;
   color: var(--color-black);
 }
-nav .left span {
+nav .left .links {
+  display: flex;
+  gap: 2rem;
+}
+nav .left .links span {
   color: var(--color-gray);
   font-size: 0.8rem;
   cursor: pointer;
 }
-nav .left span.active {
+nav .left .links span.active {
+  position: relative;
   color: var(--color-black);
   font-weight: 700;
+}
+nav .left .links span:hover {
+  transition: all 1s ease;
+  color: var(--color-orange);
+}
+nav .left .links .pop-up {
+  position: absolute;
+  left: 30rem;
+  top: 3.4rem;
+  background: white;
+  width: 7rem;
+  height: -moz-max-content;
+  height: max-content;
+  z-index: 1;
+  display: none;
+  flex-direction: column;
+  padding: 1rem 1rem;
+  border-radius: 1rem;
+  gap: 1rem;
 }
 nav .right {
   display: flex;
@@ -81,10 +105,12 @@ nav .right {
   gap: 2rem;
 }
 nav .right .btn {
+  transition: all 300ms ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.4rem 0.6rem;
+  height: 2.5rem;
+  width: 6rem;
   border: 1px solid var(--color-gray);
   border-radius: 0.5rem;
   font-size: 0.8rem;
@@ -96,6 +122,10 @@ nav .right .btn i {
   font-size: 0.7rem;
   font-weight: bold;
 }
+nav .right .btn:hover {
+  transition: all 1s ease;
+  border: 1px solid var(--color-orange);
+}
 nav .right .socials {
   display: flex;
   align-items: center;
@@ -104,7 +134,8 @@ nav .right .socials {
   cursor: pointer;
 }
 nav .right .socials i {
-  padding: 0.1rem;
+  width: 1.9rem;
+  height: 1.9rem;
   background: white;
   border-radius: 50%;
 }
@@ -124,6 +155,8 @@ main {
   /*-------------- CARD --------------*/
 }
 main .header {
+  margin-top: 2rem;
+  animation: slideUp 1s ease forwards;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -231,6 +264,7 @@ main .cards .card {
   border-radius: 1.5rem;
   gap: 1rem;
   padding-bottom: 1.5rem;
+  cursor: pointer;
 }
 main .cards .card .photo {
   position: relative;
@@ -271,6 +305,10 @@ main .cards .card .download span {
   font-weight: bold;
   font-size: 1.4rem;
 }
+main .cards .card:hover {
+  transition: all 700ms ease;
+  transform: translateY(25px);
+}
 main .footer {
   display: flex;
   align-items: center;
@@ -280,11 +318,20 @@ main .footer {
 main .footer .left {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
 }
 main .footer .left .discover {
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+}
+main .footer .left .discover > * {
+  border-bottom: 1.4px solid var(--color-black);
+}
+main .footer .left .discover:hover {
+  color: var(--color-orange);
+  border: none;
 }
 main .footer .left .collections {
   position: relative;
@@ -298,6 +345,7 @@ main .footer .left .collections .collection {
   border-radius: 0.4rem;
   border: 3px solid white;
   overflow: hidden;
+  cursor: pointer;
 }
 main .footer .left .collections .collection img {
   width: 100%;
@@ -306,22 +354,52 @@ main .footer .left .collections .collection img {
      object-fit: cover;
 }
 main .footer .left .collections > :nth-child(1) {
+  cursor: pointer;
   left: 0;
+}
+main .footer .left .collections > :nth-child(1):hover {
+  z-index: 1;
+  animation: slideColUp 1s ease forwards;
 }
 main .footer .left .collections > :nth-child(2) {
   left: 1.5rem;
 }
+main .footer .left .collections > :nth-child(2):hover {
+  z-index: 1;
+  animation: slideColUp 1s ease forwards;
+}
 main .footer .left .collections > :nth-child(3) {
   left: 3rem;
+}
+main .footer .left .collections > :nth-child(3):hover {
+  z-index: 1;
+  animation: slideColUp 1s ease forwards;
 }
 main .footer .left .collections > :nth-child(4) {
   left: 4.5rem;
 }
+main .footer .left .collections > :nth-child(4):hover {
+  z-index: 1;
+  animation: slideColUp 1s ease forwards;
+}
 main .footer .btn {
-  padding: 1rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 11rem;
+  height: 3rem;
   background: white;
   border-radius: 0.4rem;
+}
+main .footer .btn .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   cursor: pointer;
+}
+main .footer .btn .content:hover {
+  animation: slideBtnRight 1s ease forwards;
 }
 main .footer .right {
   display: flex;
@@ -350,6 +428,9 @@ main .footer .right .nav-btns .previous {
   color: var(--color-gray);
   cursor: pointer;
 }
+main .footer .right .nav-btns .previous:hover {
+  border: 1px solid var(--color-orange);
+}
 main .footer .right .nav-btns .current {
   width: 1.5rem;
   height: 1.5rem;
@@ -361,6 +442,9 @@ main .footer .right .nav-btns .current {
   border-radius: 0.2rem;
   cursor: pointer;
 }
+main .footer .right .nav-btns .current:hover {
+  border: 1px solid var(--color-orange);
+}
 main .footer .right .nav-btns .next {
   width: 1.5rem;
   height: 1.5rem;
@@ -370,4 +454,103 @@ main .footer .right .nav-btns .next {
   justify-content: center;
   border-radius: 0.2rem;
   cursor: pointer;
+}
+main .footer .right .nav-btns .next:hover {
+  border: 1px solid var(--color-orange);
+}
+
+/*----------------------- ANIMATIONS ------------------*/
+/* Slide up header animation*/
+@keyframes slideUp {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideColUp {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+}
+@keyframes slideBtnRight {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(20px);
+    opacity: 1;
+  }
+}
+/* =======================================
+MEDIA QUERIES FOR SMALL LAPTOPS AND BIG TABLETS
+==========================================
+*/
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 96%;
+    margin: 0 auto;
+  }
+}
+/* =======================================
+MEDIA QUERIES FOR SMALL TABLETS AND MOBILE PHONES
+==========================================
+*/
+@media screen and (max-width: 992px) {
+  nav .left .links {
+    display: none;
+  }
+  main {
+    /*-------------- CARD --------------*/
+  }
+  main .header .title {
+    display: flex;
+    text-align: center;
+  }
+  main .header .searchbar {
+    width: 20rem;
+  }
+  main .header .searchbar input {
+    width: 8rem;
+  }
+  main .card-heading .left span {
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+  main .card-heading .left .latest {
+    position: relative;
+  }
+  main .card-heading .left .latest .status {
+    position: absolute;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: orangered;
+    top: 0;
+    right: -0.6rem;
+  }
+  main .card-heading .right {
+    font-size: 1.2rem;
+  }
+  main .card-heading .right i {
+    cursor: pointer;
+  }
+  main .footer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  main .footer .left {
+    width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */

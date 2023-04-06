@@ -55,6 +55,7 @@ nav {
         justify-content: center;
         gap: 2rem;
 
+
         .logo {
             background: var(--color-yellow);
             padding: 1.3rem;
@@ -72,16 +73,47 @@ nav {
 
         }
 
-        span {
-            color: var(--color-gray);
-            font-size: 0.8rem;
-            cursor: pointer;
+        .links {
+            display: flex;
+            gap: 2rem;
 
-            &.active {
-                color: var(--color-black);
-                font-weight: 700;
+            span {
+                color: var(--color-gray);
+                font-size: 0.8rem;
+                cursor: pointer;
+
+                &.active {
+                    position: relative;
+                    color: var(--color-black);
+                    font-weight: 700;
+
+
+                }
+
+                &:hover {
+                    transition: all 1s ease;
+                    color: var(--color-orange);
+                }
             }
+
+            .pop-up {
+                position: absolute;
+                left: 30rem;
+                top: 3.4rem;
+                background: white;
+                width: 7rem;
+                height: max-content;
+                z-index: 1;
+                display: none;
+                flex-direction: column;
+                padding: 1rem 1rem;
+                border-radius: 1rem;
+                gap: 1rem;
+            }
+
         }
+
+
     }
 
     .right {
@@ -91,10 +123,13 @@ nav {
         gap: 2rem;
 
         .btn {
+            transition: all 300ms ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 0.4rem 0.6rem;
+            height: 2.5rem;
+            width: 6rem;
+
             border: 1px solid var(--color-gray);
             border-radius: 0.5rem;
             font-size: 0.8rem;
@@ -106,7 +141,14 @@ nav {
                 font-size: 0.7rem;
                 font-weight: bold;
             }
+
+            &:hover {
+                transition: all 1s ease;
+                border: 1px solid var(--color-orange);
+            }
         }
+
+
 
         .socials {
             display: flex;
@@ -116,9 +158,13 @@ nav {
             cursor: pointer;
 
             i {
-                padding: 0.1rem;
+                width: 1.9rem;
+                height: 1.9rem;
                 background: white;
                 border-radius: 50%;
+                // display: flex;
+                // align-items: center;
+                // justify-content: center;
 
                 &:nth-of-type(1) {
                     color: var(--color-orange);
@@ -143,7 +189,10 @@ nav {
 /*---------------- MAIN --------------------*/
 main {
 
+
     .header {
+        margin-top: 2rem;
+        animation: slideUp 1s ease forwards;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -275,6 +324,7 @@ main {
             border-radius: 1.5rem;
             gap: 1rem;
             padding-bottom: 1.5rem;
+            cursor: pointer;
 
             .photo {
                 position: relative;
@@ -326,6 +376,12 @@ main {
                 }
             }
 
+
+            &:hover {
+                transition: all 700ms ease;
+                transform: translateY(25px);
+            }
+
         }
     }
 
@@ -338,11 +394,27 @@ main {
         .left {
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 1rem;
 
             .discover {
                 display: flex;
                 flex-direction: column;
+                cursor: pointer;
+
+                >* {
+                    border-bottom: 1.4px solid var(--color-black);
+
+
+                }
+
+                &:hover {
+                    color: var(--color-orange);
+                    border: none;
+
+                }
+
+
             }
 
             .collections {
@@ -357,6 +429,7 @@ main {
                     border-radius: 0.4rem;
                     border: 3px solid white;
                     overflow: hidden;
+                    cursor: pointer;
 
                     img {
                         width: 100%;
@@ -366,31 +439,77 @@ main {
                     }
 
 
+
+
                 }
 
+
                 >:nth-child(1) {
+                    cursor: pointer;
                     left: 0;
+
+                    &:hover {
+                        z-index: 1;
+                        animation: slideColUp 1s ease forwards;
+
+                    }
                 }
 
                 >:nth-child(2) {
                     left: 1.5rem;
+
+                    &:hover {
+                        z-index: 1;
+                        animation: slideColUp 1s ease forwards;
+
+                    }
                 }
 
                 >:nth-child(3) {
                     left: 3rem;
+
+                    &:hover {
+                        z-index: 1;
+                        animation: slideColUp 1s ease forwards;
+
+                    }
                 }
 
                 >:nth-child(4) {
                     left: 4.5rem;
+
+                    &:hover {
+                        z-index: 1;
+                        animation: slideColUp 1s ease forwards;
+
+                    }
                 }
             }
         }
 
         .btn {
-            padding: 1rem 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 11rem;
+            height: 3rem;
             background: white;
             border-radius: 0.4rem;
-            cursor: pointer;
+
+            .content {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                cursor: pointer;
+
+                &:hover {
+                    animation: slideBtnRight 1s ease forwards;
+                }
+
+            }
+
+
         }
 
         .right {
@@ -407,9 +526,12 @@ main {
                 display: flex;
                 align-items: center;
                 gap: 0.4rem;
-                i{
+
+                i {
                     font-size: 1.4rem;
                 }
+
+
 
                 .previous {
                     width: 1.5rem;
@@ -421,6 +543,11 @@ main {
                     border-radius: 0.2rem;
                     color: var(--color-gray);
                     cursor: pointer;
+
+                    &:hover {
+                        border: 1px solid var(--color-orange);
+                    }
+
                 }
 
                 .current {
@@ -433,6 +560,10 @@ main {
                     justify-content: center;
                     border-radius: 0.2rem;
                     cursor: pointer;
+
+                    &:hover {
+                        border: 1px solid var(--color-orange);
+                    }
                 }
 
                 .next {
@@ -444,7 +575,161 @@ main {
                     justify-content: center;
                     border-radius: 0.2rem;
                     cursor: pointer;
+
+                    &:hover {
+                        border: 1px solid var(--color-orange);
+                    }
                 }
+            }
+        }
+    }
+}
+
+
+/*----------------------- ANIMATIONS ------------------*/
+
+/* Slide up header animation*/
+@keyframes slideUp {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+
+
+}
+
+// Slide up collection card
+
+@keyframes slideColUp {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(-20px);
+        opacity: 1;
+    }
+}
+
+// Slide up collection card
+
+@keyframes slideBtnRight {
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(20px);
+        opacity: 1;
+    }
+}
+
+
+/* =======================================
+MEDIA QUERIES FOR SMALL LAPTOPS AND BIG TABLETS
+==========================================
+*/
+
+@media screen and (max-width: 1200px) {
+    .container {
+        width: 96%;
+        margin: 0 auto;
+    }
+}
+
+
+/* =======================================
+MEDIA QUERIES FOR SMALL TABLETS AND MOBILE PHONES
+==========================================
+*/
+
+@media screen and (max-width: 992px) {
+    nav {
+        .left{
+            .links{
+                display: none;
+            }
+        }
+    }
+
+
+    // ---------MAIN----------
+    main{
+        .header{
+            .title {
+               display: flex;
+               text-align: center;
+            }
+            .searchbar{
+                width: 20rem;
+
+                input {
+                    width: 8rem;
+    
+                }
+            }
+        }
+
+          /*-------------- CARD --------------*/
+
+
+    .card-heading {
+    
+
+        .left {
+         
+
+            span {
+                font-size: 0.8rem;
+                cursor: pointer;
+            }
+
+
+            .latest {
+                position: relative;
+
+                .status {
+                    position: absolute;
+                    width: 0.5rem;
+                    height: 0.5rem;
+                    border-radius: 50%;
+                    background: orangered;
+                    top: 0;
+                    right: -0.6rem;
+                }
+            }
+
+            
+        }
+
+        .right {
+            font-size: 1.2rem;
+
+            i {
+                cursor: pointer;
+            }
+        }
+
+
+    }
+
+
+        .footer{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+
+            .left{
+                width: 100%;
             }
         }
     }
